@@ -1,0 +1,98 @@
+
+body {
+    background-color: #0a0303; /* Color guinda */
+    margin: 0; /* Elimina el margen predeterminado del body */
+    overflow: hidden; /* Evita el desbordamiento horizontal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Asegura que la altura del cuerpo sea al menos la altura de la ventana gráfica */
+}
+
+#map {
+    width: 70%; /* Establece el ancho del mapa al 80% del ancho de la ventana */
+    height: 90%; /* Establece la altura del mapa al 80% del alto de la ventana */
+    border: 2px solid white; /* Añade un borde blanco al mapa para mayor visibilidad */
+}
+header img.logo {
+    position: absolute;
+    top: 20px; /* Ajuste de la distancia desde la parte superior del logo */
+    left: 0px; /* Ajuste la distancia desde la izquierda del logo */
+    max-width: 180px; /* Ajusta el ancho del logotipo */
+}
+
+header img.Esime {
+    position: absolute;
+    top: 20px; /* Ajuste de la distancia desde la parte superior del logo */
+    right: 30px; /* Ajuste la distancia desde la izquierda del logo */
+    max-width: 200px; /* Ajusta el ancho del logotipo */
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+.footer p {
+    margin: 0;
+    color: #fff;
+}
+
+.mapacdmx-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999; /* Asegura que esté por encima de otros elementos */
+    cursor: pointer;
+  }
+  
+  .mapacdmx-icon img {
+    width: 150px; /* Ajusta el tamaño del ícono según tus necesidades */
+    height: auto;
+    cursor: pointer; /* Cambia el cursor al pasar por encima del ícono */
+  }
+  
+  .mapacdmx-descripcion {
+    position: fixed;
+    bottom: 210px;
+    right: 20px;
+    background-color: #04ff00;
+    border: 1px solid #6600ff;
+    font-size: 15px;
+    color: #0a0a0a; /* Color del texto */ 
+    font-family: "Arial", sans-serif;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* Inicialmente oculto */
+    z-index: 1000; /* Debe estar por encima del ícono de ayuda */
+  }
+
+.botonflot {
+    position: fixed;
+    top: 50%;
+    left: 3%;
+    transform: translateY(-50%);
+}
+
+.boton, .botonb {
+    display: block;
+    margin-bottom: 10px; /* Espacio entre botones */
+    padding: 15px 20px;
+    background-color: dodgerblue;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+    border: 2px solid dodgerblue;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-family: 'Arial', sans-serif;
+}
+
+.boton:hover, .botonb:hover {
+    background-color: #0056b3; 
+    border: 2px solid #0056b3;
+}

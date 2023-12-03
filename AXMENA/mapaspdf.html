@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Mapas</title>
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #logoEsime {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            max-width: 200px;
+            max-height: 150px;
+        }
+
+        #logoIpn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            max-width: 200px;
+            max-height: 150px;
+        }
+
+        .thumbnail {
+            width: 150px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            margin: 10px;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.1);
+        }
+
+        #modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 2px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        #modal-content {
+            margin: auto;
+            display: block;
+            width: 100%;
+            max-width: 700px;
+        }
+        .description {
+        background-color: rgba(0, 0, 249, 0.272);
+        color: white;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 20px;
+        max-width: 20%;
+        text-align: justify;
+        position: absolute;
+        top: 100px;
+        right: 40px;
+        writing-mode: horizontal-tb; /* Esto coloca el texto verticalmente de arriba a abajo */
+        }
+        
+        #closeBtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img src="ESIME.png" alt="Logo ESIME" id="logoEsime">
+    <img src="IPN.png" alt="Logo IPN" id="logoIpn">
+
+    <img src="Mapa1.png" alt="Imagen 1" class="thumbnail" onclick="openModal('Mapa1.png', 'En el presente mapa, se aprecia una graduación según la densidad poblacional en las distintas colonias de la Ciudad de México. Los tonos más claros de verde señalan áreas con menor población, mientras que el rojo representa el punto máximo de densidad poblacional. Además, las etiquetas numéricas en el mapa proporcionan el número total de habitantes por alcaldía.Esta información resulta fundamental en el análisis y la planificación urbana, ya que permite identificar patrones y tendencias en la distribución demográfica. Asimismo, facilitar la creación de un campo especial que agregue la población total por alcaldías, brindando una visión integral de las necesidades y demandas de servicios, especialmente en el ámbito de la atención médica. La adecuada distribución de unidades médicas se vuelve crucial en la mejora de la calidad de vida de la población y en la eficacia de la estructura urbana. ')">
+    <img src="Mapa2.png" alt="Imagen 2" class="thumbnail" onclick="openModal('Mapa2.png', 'En este mapa, se presenta una representación visual de la distribución de unidades médicas por colonia en la Ciudad de México. Las áreas en tonos azules indican la ausencia de unidades médicas, mientras que las zonas en tonos rosas denotan un alto nivel de concentración de estas instalaciones. Al observar las etiquetas numéricas en el mapa, se ofrece una visión detallada de la cantidad de unidades médicas presentes en cada colonia. Este análisis se vuelve esencial para comprender la accesibilidad y disponibilidad de servicios de salud en distintas áreas de la ciudad. La creación de un campo especial, mediante una unión estratégica, permite consolidar la información sobre la cantidad total de unidades médicas por alcaldía. Este enfoque facilita la identificación de disparidades en la distribución de servicios de salud, subrayando la importancia de planificar estratégicamente la ubicación de nuevas instalaciones médicas. La optimización de esta distribución contribuye significativamente a mejorar la cobertura y la calidad de atención médica en toda la ciudad.')">
+    <img src="Mapa3.png" alt="Imagen 3" class="thumbnail" onclick="openModal('Mapa3.png', 'En el siguiente mapa, se presenta una representación visual de la distribución de ingresos económicos por colonia en la Ciudad de México. Los tonos verdes indican áreas con ingresos más bajos, mientras que los tonos rojos señalan zonas con ingresos más altos. Notablemente, las alcaldías como Benito Juárez y Coyoacán se distinguen por su buen nivel económico, aunque cabe destacar que son superadas por la alcaldía de Miguel Hidalgo, la cual registra el mayor ingreso económico en comparación con las demás. Las etiquetas numéricas en el mapa detallan la información sobre los ingresos económicos por colonia, brindando una visión precisa de las disparidades económicas dentro de la ciudad. Este análisis resulta esencial para la planificación económica y el diseño de políticas públicas que atienden las necesidades específicas de cada área. Esta información contribuye a la toma de decisiones informadas para promover la equidad económica y el bienestar en toda la ciudad.')">
+
+    <div id="modal">
+        <span id="closeBtn" onclick="closeModal()">&times;</span>
+        <div id="description" class="description">Descripción del mapa</div>
+        <img id="modal-content" class="modal-image">
+    </div>
+
+    <script>
+        function openModal(imageSrc, description) {
+            document.getElementById('modal-content').src = imageSrc;
+            document.getElementById('description').innerText = description;
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

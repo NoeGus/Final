@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXMENA</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    
+</head>
+<body>
+
+    <header class="header">
+        <img src="LOGO.png" alt="Logo" class="logo">
+        
+    </header>
+
+        <div id="map">
+            <iframe src="Mapa.html" width="100%" height="100%" style="border:0;"></iframe>
+        
+        </div>
+
+        <div class="mapacdmx-icon">
+            <img src="cdmx.png" alt="Guía de uso">
+          </div>
+          
+        <div class="mapacdmx-descripcion" id="mapacdmx-descripcion">
+            <p>Personaliza tu experiencia seleccionando las capas que deseas visualizar en la CDMX.</p>
+            <p2>Simplemente selecciona las capas de interés y personaliza tu visualización para obtener la información que necesitas.</p2>
+            <p3>En la búsqueda ingresa la dirección completa; calle, número, colonia, código y alcadía.</p3>
+        </div>
+    
+        <div class="botonflot ">
+          <a class="boton" href="presentacion.html" target="_blank">Presentación</a>
+          <a class="boton botonb" href="mapaspdf.html" target="_blank">Mapas </a>
+
+        </div>
+
+        <script>
+            const ayudaIcon = document.querySelector(".mapacdmx-icon img");
+            const ayudaDescripcion = document.querySelector(".mapacdmx-descripcion");
+          
+            ayudaIcon.addEventListener("click", () => {
+              if (ayudaDescripcion.style.display === "block") {
+                ayudaDescripcion.style.display = "none";
+              } else {
+                ayudaDescripcion.style.display = "block";
+              }
+            });
+          </script>
+</body>
+</html>
